@@ -3,29 +3,47 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Herramientas digitales gratuitas: calculadoras, conversores, generadores y utilidades online. Free online calculators, converters and tools.">
+<meta name="description" content="Herramientas digitales gratuitas: calculadoras, conversores, generadores y utilidades online.">
 <meta name="theme-color" content="#172554">
 <title>TodoHerramientas — Herramientas digitales gratis</title>
 <style>
 :root{--navy:#172554;--blue:#2563eb;--bg:#f4f7fb;--ink:#172033;--muted:#64748b;--card:#fff;--line:#e2e8f0}
-*{box-sizing:border-box}body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:var(--bg);color:var(--ink)}
+*{box-sizing:border-box}
+body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:var(--bg);color:var(--ink)}
 header{background:linear-gradient(120deg,#172554,#1d4ed8);color:white;padding:24px 18px 34px}
 .top{max-width:1100px;margin:auto;display:flex;align-items:center;justify-content:space-between;gap:12px}
-.brand{font-size:1.35rem;font-weight:800;letter-spacing:-.5px}.brand span{color:#93c5fd}
-button,select,input,textarea{font:inherit}button{cursor:pointer;border:0;border-radius:10px;padding:10px 14px;background:var(--blue);color:#fff;font-weight:650}
+.brand{font-size:1.35rem;font-weight:800;letter-spacing:-.5px}
+.brand span{color:#93c5fd}
+button,select,input,textarea{font:inherit}
+button{cursor:pointer;border:0;border-radius:10px;padding:10px 14px;background:var(--blue);color:#fff;font-weight:650}
 .lang{background:#fff;color:var(--navy);padding:8px 12px}
-.hero{max-width:1100px;margin:30px auto 0}.hero h1{font-size:clamp(2rem,5vw,3.2rem);margin:0 0 8px;line-height:1.1}.hero p{margin:0;color:#dbeafe;font-size:1.05rem}
+.hero{max-width:1100px;margin:30px auto 0}
+.hero h1{font-size:clamp(2rem,5vw,3.2rem);margin:0 0 8px;line-height:1.1}
+.hero p{margin:0;color:#dbeafe;font-size:1.05rem}
 main{max-width:1100px;margin:-16px auto 50px;padding:0 16px}
 .search{width:100%;padding:15px 17px;border:1px solid var(--line);border-radius:14px;box-shadow:0 8px 25px #0f172a12;background:white;margin-bottom:22px}
-.categories{display:flex;gap:8px;flex-wrap:wrap;margin:0 0 20px}.categories button{background:#e2e8f0;color:#334155}.categories button.active{background:var(--navy);color:white}
+.categories{display:flex;gap:8px;flex-wrap:wrap;margin:0 0 20px}
+.categories button{background:#e2e8f0;color:#334155}
+.categories button.active{background:var(--navy);color:white}
 .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(245px,1fr));gap:16px}
-.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:20px;box-shadow:0 8px 24px #1725540b}
-.card h2{font-size:1.08rem;margin:0 0 5px;letter-spacing:-.2px}.desc{color:var(--muted);font-size:.9rem;min-height:40px;margin:0 0 14px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px;box-shadow:0 5px 18px #0f172a08}
+.card h2{font-size:1.08rem;margin:0 0 5px}
+.desc{color:var(--muted);font-size:.9rem;min-height:40px;margin:0 0 14px}
 .field{display:block;width:100%;padding:10px 11px;border:1px solid #cbd5e1;border-radius:9px;margin:8px 0;background:#fff;color:var(--ink)}
-.row{display:flex;gap:8px}.row>*{min-width:0;flex:1}.result{margin-top:10px;padding:10px;background:#eff6ff;border-radius:9px;min-height:40px;overflow-wrap:anywhere;font-weight:600;color:#1e3a8a}
-.small{font-size:.8rem;color:var(--muted);font-weight:400}.card button{margin-top:4px}
-footer{text-align:center;color:var(--muted);padding:20px;font-size:.9rem}
+.row{display:flex;gap:8px}
+.row>*{min-width:0;flex:1}
+.result{margin-top:10px;padding:10px;background:#eff6ff;border-radius:9px;min-height:40px;overflow-wrap:anywhere;font-weight:600;color:#1e3a8a}
+.small{font-size:.8rem;color:var(--muted);font-weight:400}
+.card button{margin-top:4px}
 .hidden{display:none!important}
+footer{background:#172554;color:#e2e8f0;text-align:center;padding:30px 16px;margin-top:45px}
+footer .footer-inner{max-width:1100px;margin:auto}
+footer h2{color:#fff;font-size:1.2rem;margin:0 0 6px}
+footer p{margin:7px 0;color:#cbd5e1}
+.footer-links{display:flex;justify-content:center;gap:12px 22px;flex-wrap:wrap;margin:18px 0}
+.footer-links a{color:#bfdbfe;text-decoration:none;font-weight:600}
+.footer-links a:hover{text-decoration:underline}
+footer .copyright{font-size:.82rem;color:#cbd5e1;margin-top:18px}
 @media(max-width:520px){.top{align-items:flex-start}.hero{margin-top:24px}.row{flex-direction:column}.card{padding:16px}}
 </style>
 </head>
@@ -36,7 +54,7 @@ footer{text-align:center;color:var(--muted);padding:20px;font-size:.9rem}
 </header>
 <main>
  <input class="search" id="search" placeholder="Buscar una herramienta..." oninput="filterTools()" aria-label="Buscar herramientas">
- <nav class="categories" id="categories"></nav>
+ <nav class="categories" id="categories" aria-label="Categorías de herramientas"></nav>
  <section class="grid" id="toolGrid">
   <article class="card" data-category="math" data-key="calculator calculadora math">
    <h2 data-es="🧮 Calculadora" data-en="🧮 Calculator">🧮 Calculadora</h2><p class="desc" data-es="Realiza operaciones matemáticas básicas." data-en="Perform basic math operations.">Realiza operaciones matemáticas básicas.</p>
@@ -83,46 +101,48 @@ footer{text-align:center;color:var(--muted);padding:20px;font-size:.9rem}
    <h2 data-es="▦ Generador de códigos QR" data-en="▦ QR code generator">▦ Generador de códigos QR</h2><p class="desc" data-es="Crea un QR a partir de un enlace o texto." data-en="Create a QR code from a link or text.">Crea un QR a partir de un enlace o texto.</p>
    <input class="field" id="qrText" placeholder="https://..."><button onclick="makeQR()" data-es="Crear QR" data-en="Create QR">Crear QR</button><div class="result" id="qrResult"></div>
   </article>
- 
-<article class="card" data-category="math" data-key="prestamo loan cuota"><h2>🏦 Calculadora de préstamos</h2><p class="desc">Estima la cuota mensual de un préstamo a tasa fija.</p><input class="field" id="loanA" type="number" placeholder="Monto ($)"><div class="row"><input class="field" id="loanR" type="number" placeholder="Interés anual %"><input class="field" id="loanN" type="number" placeholder="Meses"></div><button onclick="loanCalc()">Calcular cuota</button><div class="result" id="loanOut"></div><p class="small">Estimación; no incluye comisiones, seguros ni impuestos.</p></article>
-<article class="card" data-category="math" data-key="interes compuesto compound interest ahorro"><h2>📈 Interés compuesto</h2><p class="desc">Proyecta el crecimiento de un ahorro inicial.</p><div class="row"><input class="field" id="cp" type="number" placeholder="Capital inicial"><input class="field" id="cr" type="number" placeholder="Tasa anual %"></div><input class="field" id="cy" type="number" placeholder="Años"><button onclick="compoundCalc()">Calcular</button><div class="result" id="compoundOut"></div></article>
-<article class="card" data-category="math" data-key="descuento discount rebaja"><h2>🏷️ Calculadora de descuentos</h2><p class="desc">Calcula el precio final después de una rebaja.</p><div class="row"><input class="field" id="priceA" type="number" placeholder="Precio original"><input class="field" id="discA" type="number" placeholder="Descuento %"></div><button onclick="discountCalc()">Calcular precio</button><div class="result" id="discountOut"></div></article>
-<article class="card" data-category="generate" data-key="color hexadecimal hex rgb picker"><h2>🎨 Generador de códigos de colores</h2><p class="desc">Elige un color y consulta sus códigos HEX y RGB.</p><input class="field" id="colorPick" type="color" value="#3457d5" oninput="showColor()"><div class="result" id="colorOut">#3457d5</div></article>
-<article class="card" data-category="life" data-key="horas trabajadas work hours time"><h2>⏱️ Calculadora de horas trabajadas</h2><p class="desc">Calcula las horas entre entrada y salida, descontando el descanso.</p><div class="row"><input class="field" id="timeIn" type="time" value="08:00"><input class="field" id="timeOut" type="time" value="17:00"></div><input class="field" id="breakMin" type="number" value="60" placeholder="Descanso en minutos"><button onclick="hoursCalc()">Calcular horas</button><div class="result" id="hoursOut"></div></article>
-<article class="card" data-category="generate" data-key="ideas nombres negocio name generator"><h2>💡 Generador de ideas de negocio</h2><p class="desc">Combina palabras para inspirar nombres de proyectos.</p><button onclick="businessNames()">Generar nombres</button><div class="result" id="businessOut"></div></article>
-<article class="card" data-category="math" data-key="regla de tres proportion calculator"><h2>➗ Calculadora de regla de tres</h2><p class="desc">Encuentra el valor desconocido de una proporción simple.</p><div class="row"><input class="field" id="ruleA" type="number" placeholder="A"><input class="field" id="ruleB" type="number" placeholder="B"></div><input class="field" id="ruleC" type="number" placeholder="C"><button onclick="ruleCalc()">Calcular X</button><div class="result" id="ruleOut"></div></article>
-
  </section>
 </main>
-<footer id="footer">© <span id="year"></span> TodoHerramientas · Herramientas gratuitas. Verifica los resultados importantes.</footer>
+<footer id="footer">
+ <div class="footer-inner">
+  <h2>TodoHerramientas</h2>
+  <p data-es="Herramientas gratuitas para facilitar tus tareas diarias." data-en="Free tools to make everyday tasks easier.">Herramientas gratuitas para facilitar tus tareas diarias.</p>
+  <nav class="footer-links" aria-label="Información del sitio">
+   <a href="about.html" data-es="Sobre nosotros" data-en="About us">Sobre nosotros</a>
+   <a href="contact.html" data-es="Contacto" data-en="Contact">Contacto</a>
+   <a href="privacy.html" data-es="Política de privacidad" data-en="Privacy policy">Política de privacidad</a>
+  </nav>
+  <p class="copyright">© <span id="year"></span> TodoHerramientas. <span data-es="Verifica los resultados importantes." data-en="Verify important results.">Verifica los resultados importantes.</span></p>
+ </div>
+</footer>
 <script>
 let lang='es', category='all';
 const labels={es:{all:'Todas',math:'Matemáticas',convert:'Conversores',text:'Texto',generate:'Generadores',life:'Vida diaria',search:'Buscar una herramienta...'},en:{all:'All',math:'Math',convert:'Converters',text:'Text',generate:'Generators',life:'Daily life',search:'Search tools...'}};
-function toggleLang(){lang=lang==='es'?'en':'es';document.documentElement.lang=lang;document.getElementById('langBtn').textContent=lang==='es'?'English':'Español';document.getElementById('headline').textContent=lang==='es'?'Herramientas útiles, gratis y en un solo lugar.':'Useful tools, free and all in one place.';document.getElementById('subhead').textContent=lang==='es'?'Sin registro. Úsalas desde tu teléfono o computadora.':'No sign-up. Use them on your phone or computer.';document.getElementById('search').placeholder=labels[lang].search;document.querySelectorAll('[data-es]').forEach(el=>el.textContent=el.dataset[lang]);buildCategories();filterTools()}
+function toggleLang(){
+ lang=lang==='es'?'en':'es';
+ document.documentElement.lang=lang;
+ document.getElementById('langBtn').textContent=lang==='es'?'English':'Español';
+ document.getElementById('headline').textContent=lang==='es'?'Herramientas útiles, gratis y en un solo lugar.':'Useful tools, free and all in one place.';
+ document.getElementById('subhead').textContent=lang==='es'?'Sin registro. Úsalas desde tu teléfono o computadora.':'No sign-up. Use them on your phone or computer.';
+ document.getElementById('search').placeholder=labels[lang].search;
+ document.querySelectorAll('[data-es]').forEach(el=>el.textContent=el.dataset[lang]);
+ buildCategories();filterTools();
+}
 function buildCategories(){let cats=['all','math','convert','text','generate','life'];document.getElementById('categories').innerHTML=cats.map(c=>`<button class="${category===c?'active':''}" onclick="setCategory('${c}')">${labels[lang][c]}</button>`).join('')}
 function setCategory(c){category=c;buildCategories();filterTools()}
 function filterTools(){let q=document.getElementById('search').value.toLowerCase();document.querySelectorAll('.card').forEach(card=>{let matchCat=category==='all'||card.dataset.category===category;let matchText=(card.innerText+' '+card.dataset.key).toLowerCase().includes(q);card.classList.toggle('hidden',!(matchCat&&matchText))})}
 function out(id,msg){document.getElementById(id).textContent=msg}
-function calculate(){let s=document.getElementById('calcInput').value.trim();if(!/^[0-9+\-*/().%\s]+$/.test(s)){out('calcResult',lang==='es'?'Introduce una operación válida.':'Enter a valid expression.');return}try{let v=Function('"use strict";return ('+s+')')();out('calcResult',Number.isFinite(v)?String(v):(lang==='es'?'Resultado no válido':'Invalid result'))}catch(e){out('calcResult',lang==='es'?'No se pudo calcular.':'Could not calculate.')} }
+function calculate(){let s=document.getElementById('calcInput').value.trim();if(!/^[0-9+\-*/().%\s]+$/.test(s)){out('calcResult',lang==='es'?'Introduce una operación válida.':'Enter a valid expression.');return}try{let v=Function('"use strict";return ('+s+')')();out('calcResult',Number.isFinite(v)?String(v):(lang==='es'?'Resultado no válido':'Invalid result'))}catch(e){out('calcResult',lang==='es'?'No se pudo calcular.':'Could not calculate.')}}
 function percentage(){let p=Number(document.getElementById('pct').value),b=Number(document.getElementById('base').value);out('pctResult',`${p}% ${lang==='es'?'de':'of'} ${b} = ${(p*b/100).toLocaleString()}`)}
 function countWords(){let s=document.getElementById('words').value.trim();let n=s?s.split(/\s+/).length:0;out('wordResult',`${n} ${lang==='es'?'palabras':'words'} · ${document.getElementById('words').value.length} ${lang==='es'?'caracteres':'characters'}`)}
 function ageCalc(){let v=document.getElementById('birth').value;if(!v){out('ageResult',lang==='es'?'Selecciona una fecha.':'Choose a date.');return}let b=new Date(v+'T00:00:00'),t=new Date();if(b>t){out('ageResult',lang==='es'?'La fecha no puede estar en el futuro.':'Date cannot be in the future.');return}let a=t.getFullYear()-b.getFullYear();if(t.getMonth()<b.getMonth()||(t.getMonth()===b.getMonth()&&t.getDate()<b.getDate()))a--;out('ageResult',`${a} ${lang==='es'?'años':'years'}`)}
-function convertUnit(){let v=Number(document.getElementById('unitValue').value),type=document.getElementById('unitType').value;let factors={'km-mi':.621371,'mi-km':1.60934,'m-ft':3.28084,'ft-m':.3048,'kg-lb':2.20462,'lb-kg':.453592};out('unitResult',`${v} → ${(v*factors[type]).toFixed(4)}`)}
+function convertUnit(){let v=Number(document.getElementById('unitValue').value),type=document.getElementById('unitType').value;let factors={'km-mi':.621371,'mi-km':1.60934,'m-ft':3.28084,'ft-m':.3048,'kg-lb':2.20462,'lb-kg':.453592};if(document.getElementById('unitValue').value===''){out('unitResult',lang==='es'?'Introduce una cantidad.':'Enter an amount.');return}out('unitResult',`${v} → ${(v*factors[type]).toFixed(4)}`)}
 function makePassword(){let n=Math.max(8,Math.min(64,Number(document.getElementById('passLength').value)||16)),chars='ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz23456789!@#$%&*?';let arr=new Uint32Array(n);crypto.getRandomValues(arr);let p=Array.from(arr,x=>chars[x%chars.length]).join('');out('passResult',p)}
 function bmiCalc(){let w=Number(document.getElementById('weight').value),h=Number(document.getElementById('height').value)/100;if(w<=0||h<=0){out('bmiResult',lang==='es'?'Introduce peso y altura válidos.':'Enter valid weight and height.');return}out('bmiResult',`IMC: ${(w/(h*h)).toFixed(1)} · ${lang==='es'?'Resultado orientativo, no diagnóstico.':'Informational only, not a diagnosis.'}`)}
 function nameIdeas(){let a=lang==='es'?['Nube','Brilla','Punto','Mundo','Idea','Pixel']:['Nova','Bright','Point','World','Idea','Pixel'];let b=lang==='es'?['Digital','Fácil','Express','Creativo','Smart','Total']:['Digital','Easy','Express','Creative','Smart','Hub'];out('nameResult',Array.from({length:5},()=>a[Math.random()*a.length|0]+b[Math.random()*b.length|0]).join(' · '))}
 async function currencyConvert(){let from=document.getElementById('fromCurrency').value,to=document.getElementById('toCurrency').value,amount=Number(document.getElementById('currencyAmount').value);out('currencyResult',lang==='es'?'Consultando tasa...':'Getting rate...');try{let r=await fetch(`https://open.er-api.com/v6/latest/${from}`),d=await r.json();if(d.result!=='success'||!d.rates[to])throw Error();out('currencyResult',`${amount} ${from} = ${(amount*d.rates[to]).toFixed(2)} ${to} (${d.time_last_update_utc})`)}catch(e){out('currencyResult',lang==='es'?'No se pudo obtener la tasa. Intenta más tarde.':'Could not retrieve rate. Try again later.')}}
 function makeQR(){let s=document.getElementById('qrText').value.trim();if(!s){out('qrResult',lang==='es'?'Escribe un texto o enlace.':'Enter text or a link.');return}let img=document.createElement('img');img.alt='QR code';img.width=180;img.height=180;img.src='https://api.qrserver.com/v1/create-qr-code/?size=180x180&data='+encodeURIComponent(s);let box=document.getElementById('qrResult');box.innerHTML='';box.appendChild(img)}
 document.getElementById('year').textContent=new Date().getFullYear();buildCategories();
-
-function loanCalc(){let p=+document.getElementById('loanA').value,r=+document.getElementById('loanR').value/1200,n=+document.getElementById('loanN').value;if(p<=0||n<=0||r<0){document.getElementById('loanOut').textContent='Revisa los datos.';return}let m=r===0?p/n:p*r/(1-Math.pow(1+r,-n));document.getElementById('loanOut').textContent='Cuota estimada: $'+m.toFixed(2)+' · Total: $'+(m*n).toFixed(2)}
-function compoundCalc(){let p=+document.getElementById('cp').value,r=+document.getElementById('cr').value/100,y=+document.getElementById('cy').value;if(p<0||r<0||y<0){document.getElementById('compoundOut').textContent='Revisa los datos.';return}let t=p*Math.pow(1+r,y);document.getElementById('compoundOut').textContent='Monto final: $'+t.toFixed(2)+' · Interés: $'+(t-p).toFixed(2)}
-function discountCalc(){let p=+document.getElementById('priceA').value,d=+document.getElementById('discA').value;if(p<0||d<0||d>100){document.getElementById('discountOut').textContent='Usa un descuento entre 0 y 100.';return}document.getElementById('discountOut').textContent='Precio final: $'+(p*(1-d/100)).toFixed(2)+' · Ahorras: $'+(p*d/100).toFixed(2)}
-function escHTML(s){return s.replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
-function showColor(){let c=document.getElementById('colorPick').value;let r=parseInt(c.slice(1,3),16),g=parseInt(c.slice(3,5),16),b=parseInt(c.slice(5,7),16);document.getElementById('colorOut').textContent=c.toUpperCase()+' · RGB('+r+', '+g+', '+b+')'}
-function hoursCalc(){let a=document.getElementById('timeIn').value.split(':').map(Number),b=document.getElementById('timeOut').value.split(':').map(Number);if(a.length<2||b.length<2){document.getElementById('hoursOut').textContent='Selecciona las horas.';return}let x=a[0]*60+a[1],y=b[0]*60+b[1];if(y<x)y+=1440;let m=y-x-(+document.getElementById('breakMin').value||0);if(m<0){document.getElementById('hoursOut').textContent='Revisa el descanso.';return}document.getElementById('hoursOut').textContent=Math.floor(m/60)+' h '+m%60+' min ('+(m/60).toFixed(2)+' horas)'}
-function businessNames(){let a=['Nube','Brilla','Punto','Mundo','Idea','Pixel'],b=['Digital','Creativo','Express','Smart','Total','Fácil'];document.getElementById('businessOut').textContent=Array.from({length:5},()=>a[Math.random()*a.length|0]+' '+b[Math.random()*b.length|0]).join(' · ')}
-function ruleCalc(){let a=+document.getElementById('ruleA').value,b=+document.getElementById('ruleB').value,c=+document.getElementById('ruleC').value;if(a===0){document.getElementById('ruleOut').textContent='A no puede ser cero.';return}document.getElementById('ruleOut').textContent='X = '+(b*c/a).toFixed(4)}
-
 </script>
-</body></html>
+</body>
+</html>
