@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://todoherramientas.paralosvideosdetodo.workers.dev/sitemap.xml
