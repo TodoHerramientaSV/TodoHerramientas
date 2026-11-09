@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://todoherramientas.todoherramientas.workers.dev/sitemap.xml
